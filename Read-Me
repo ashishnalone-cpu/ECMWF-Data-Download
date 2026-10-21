@@ -1,0 +1,26 @@
+To run the code open - Codespaces
+
+In Codespaces type following command in terminal
+python -m pip install -r requirements.txt
+
+this will install dependencies given in requirement.txt files
+
+In the Codespaces terminal, run:
+python download_aifs.py --date 20261021 --hour 00z
+
+This processes forecast steps from 0 to 360 hours at six-hour intervals, creating up to 61 individual NetCDF files and one merged file.
+To test the workflow with only three forecast steps first:
+python download_aifs.py \
+  --date 20261021 \
+  --hour 00z \
+  --step-start 0 \
+  --step-end 12 \
+  --step-interval 6
+
+To retain only the merged NetCDF file after processing:
+python download_aifs.py \
+  --date 20261021 \
+  --hour 00z \
+  --delete-originals
+
+The last command deletes the individual NetCDF files after merging. Use it only if you are sure you do not need those individual files.
