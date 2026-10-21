@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Forecast output data
+Input_NC_files/
+*.grib2
+
+# Temporary files
+*.tmp
